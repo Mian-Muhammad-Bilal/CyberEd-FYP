@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfaef0b998662b48a7b64f04cd04b5c, type: 3}
+  m_Name: Cyber Basics
+  m_EditorClassIdentifier: 
+  category: Cyber Basics
+  questions:
+  - questionText: "What is a potential risk of accepting a friend request from someone
+      you don\u2019t know online?"
+    replies:
+    - They can view your profile photo.
+    - 'They can increase your follower count. '
+    - 'They can gain access to your personal data. '
+    - 'They can invite you to more friend groups. '
+    correctReplyIndex: 2
+    questionImage: {fileID: -855298285791758126, guid: b01e948e1a629e341942a178821352d1, type: 3}
+  - questionText: Why is it important to include special characters in a password?
+    replies:
+    - 'Special characters make your password longer. '
+    - Special characters increase the complexity of the password, making it harder
+      to crack.
+    - 'Special characters are easier to remember. '
+    - 'Special characters prevent brute force attacks entirely. '
+    correctReplyIndex: 1
+    questionImage: {fileID: 6937817954938267909, guid: 81830468c8311c24791e9b53330ef7b3, type: 3}
+  - questionText: 'Which of the following links might be suspicious? '
+    replies:
+    - ') https://www.bankofamerica.com '
+    - ') https://bankofamerca.secure-login.net '
+    - https://www.paypal.com
+    - 'https://amazon.com '
+    correctReplyIndex: 1
+    questionImage: {fileID: -6470460504253458178, guid: e34c7255714521a4e87c3314f737075c, type: 3}
+  - questionText: 'What is a key sign of a phishing email? '
+    replies:
+    - 'It has a professional-looking logo. '
+    - 'It is addressed to you by name. '
+    - It asks you to urgently verify your account by clicking a link
+    - 'It provides a support contact for inquiries. '
+    correctReplyIndex: 2
+    questionImage: {fileID: -4178046375966092550, guid: 4d2825e342e77724abf9f8720968347d, type: 3}
+  - questionText: 'Why is using public Wi-Fi for online banking a bad idea? '
+    replies:
+    - ') Public Wi-Fi is slower than private connections. '
+    - 'Hackers can intercept your data because it is an unencrypted network. '
+    - ') Public Wi-Fi is often unreliable. '
+    - 'Your device battery drains faster on public Wi-Fi. '
+    correctReplyIndex: 1
+    questionImage: {fileID: 3465286685962602723, guid: 892e3b9be9e79654193b173bb574b174, type: 3}
+  - questionText: 'How does enabling biometric locks (like fingerprint or face unlock)
+      improve device security? '
+    replies:
+    - It prevents all forms of malware.
+    - It ensures only authorized physical users can unlock the device
+    - ') It increases battery life by minimizing device usage. '
+    - 'It allows apps to run faster. '
+    correctReplyIndex: 1
+    questionImage: {fileID: 3465286685962602723, guid: 3aaa9883fb786b54aad045fa76c8d376, type: 3}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7a2c5134f84bf58fecdb75fc92feb6, type: 3}
+  m_Name: Unique Projectiles Vol 2 - Muzzle WaterBall01 Blue
+  m_EditorClassIdentifier: 
+  objectToCreate: {fileID: 1576938067591526754, guid: 2c1a23cec9d3d409cbde77250e05d6ee, type: 3}
+  parentToPosition: 1
+  adjustLaunchRotation: 1
+  rotationRelativeToSpawnPointForward: {x: 0, y: 0, z: 0}

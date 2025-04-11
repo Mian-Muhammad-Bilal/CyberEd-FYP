@@ -1,0 +1,12 @@
+# ninja log v5
+128	6496	7659574044003384	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	820f60fa011c684e
+2	6634	7659574045488651	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	4b5d800afc3051ba
+67	7063	7659574048510203	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a7869a01e8d0de59
+28	7308	7659574051988081	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	306c40bd8c5e0a1c
+7064	8175	7659574060874930	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	47cf99283fb0dcdd
+138	8221	7659574061222805	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	4f7751458b2cfa1
+60	8759	7659574066876457	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	99277203d9f500d2
+8176	8952	7659574069527145	C:/Users/Biologist/Documents/FYP/FYP-Dev/Unity_projects/PlatformerBackups/solid-waffle/solid-waffle/CyberED/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3k2k684m/obj/arm64-v8a/libswappywrapper.so	39e8275993eb091c
+6635	9393	7659574073920916	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	a88839df32791deb
+6502	9478	7659574074747344	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b1522590ec2b5117
+9478	9626	7659574076293667	C:/Users/Biologist/Documents/FYP/FYP-Dev/Unity_projects/PlatformerBackups/solid-waffle/solid-waffle/CyberED/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3k2k684m/obj/arm64-v8a/libgame.so	15f3f7255c0b5726
