@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player_Maze : MonoBehaviour
 {
     public int keys = 0;
     public float speed = 5.0f;
