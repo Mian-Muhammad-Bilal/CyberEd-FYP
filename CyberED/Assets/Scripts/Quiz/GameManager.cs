@@ -244,7 +244,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("❌ ScoreManager instance is null! Make sure it is in the scene.");
             finalScoreText.text = "0"; // Display 0 if ScoreManager is missing
         }
-        StartCoroutine(LoadNextSceneAfterDelay(3f)); // Wait 3 seconds and load the next scene
+        StartCoroutine(LoadNextSceneAfterDelay(2f)); // Wait 3 seconds and load the next scene
         // Invoke("LoadNextScene", 3f); // Wait 3 seconds, then load next scene
         // nextButton.gameObject.SetActive(true); // Show the next button
     }
