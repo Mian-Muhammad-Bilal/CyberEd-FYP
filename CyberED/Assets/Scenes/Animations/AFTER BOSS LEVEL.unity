@@ -304,7 +304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1235835975}
         m_TargetAssemblyTypeName: VideoEndHandler, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 1
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1235835976}
-  buttonGameObject: {fileID: 0}
+  buttonGameObject: {fileID: 974907095}
 --- !u!328 &1235835976
 VideoPlayer:
   m_ObjectHideFlags: 0
