@@ -69,7 +69,7 @@ public class DragDrop : MonoBehaviour
     // This method is called when the submit button is clicked
    void OnSubmit()
 {
-    DragDrop[] allDragDrops = FindObjectsOfType<DragDrop>();  // Find all draggable objects in scene
+    DragDrop[] allDragDrops = Object.FindObjectsByType<DragDrop>(FindObjectsSortMode.None);// Find all draggable objects in scene
 
     foreach (DragDrop item in allDragDrops)
     {
