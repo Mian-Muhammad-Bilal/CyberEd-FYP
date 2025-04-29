@@ -29,7 +29,9 @@ public class Chat_Bot_Manager : MonoBehaviour
 
         if(!string.IsNullOrEmpty(userInput))
         {
-            StartCoroutine(SendMessage(userInput));
+            StartCoroutine(SendChatRequest(userInput));
+            inputField.text = ""; // Clear input field
+
         }
         else
         {
@@ -38,7 +40,7 @@ public class Chat_Bot_Manager : MonoBehaviour
 
     }
     // Request & Response
-    IEnumerator SendMessage(string messageInput)
+    IEnumerator SendChatRequest(string messageInput)
     {
         var jsonRequest = new JObject
         {
@@ -79,7 +81,7 @@ public class Chat_Bot_Manager : MonoBehaviour
 
             string messageRes = jsonReponse["choices"]?[0]?["message"]?["content"]?.ToString();
 
-            responseText.text = !string.IsNullOrEmpty(messageRes) ? "AI: " + messageRes : "No response received.";
+            responseText.text = !string.IsNullOrEmpty(messageRes) ? "Genesis: " + messageRes : "No response received.";
         }
         else
         {
