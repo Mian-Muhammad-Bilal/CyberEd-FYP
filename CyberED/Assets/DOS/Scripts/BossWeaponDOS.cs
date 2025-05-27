@@ -8,7 +8,7 @@ namespace DOS
     public class BossWeaponDOS : MonoBehaviour
     {
         public int attackDamage = 10;
-        public int enragedAttackDamage = 20;
+        public int enragedAttackDamage = 15;
 
         public Vector3 attackOffset;
         public float attackRange = 1f;

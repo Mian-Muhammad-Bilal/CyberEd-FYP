@@ -6,7 +6,7 @@ namespace DOS
     public class BulletDOS : MonoBehaviour
     {
         public float speed = 20f;
-        public int damage = 100;
+        public int damage = 150;
         public Rigidbody2D rb;
         public GameObject impactEffect;
 

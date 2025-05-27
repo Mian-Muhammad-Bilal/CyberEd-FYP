@@ -7,6 +7,7 @@ using Firebase.Auth;
 using System;
 using System.Threading.Tasks;
 using Firebase.Extensions;
+using UnityEngine.SceneManagement;
 
 
 public class FirebaseController: MonoBehaviour
@@ -218,10 +219,12 @@ public class FirebaseController: MonoBehaviour
                 Debug.Log("Signed out " + user.UserId);
             }
             user = auth.CurrentUser;
-            if (signedIn) 
+            if (signedIn)
             {
                 Debug.Log("Signed in " + user.UserId);
                 IsSignIn = true;
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+
             }
         }
     }

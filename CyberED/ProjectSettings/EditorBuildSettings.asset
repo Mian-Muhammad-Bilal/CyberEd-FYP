@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/FirebaseAuth.unity
+    guid: 7ded8dedcbb84e449a9d801299ffadb9
+  - enabled: 1
     path: Assets/Scenes/Platformer/1MainMenu.unity
     guid: 102338e01914ee340a35ef48be457d72
   - enabled: 1
@@ -57,20 +60,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Animations/AFTER 10 LEVELS.unity
     guid: 7814434dd0dbe0640b76b82332dffae4
   - enabled: 1
-    path: Assets/Scenes/Boss/REALSCENE.unity
-    guid: 7576ae7a9ae7eee45843502535bec33c
+    path: Assets/DOS/REALDOS.unity
+    guid: 04e29e3827ceb2a4d9cbbd5f54af2409
   - enabled: 1
     path: Assets/Scenes/Animations/AFTER 15 LEVELS.unity
     guid: 64d2efa903b250543a2283268d121e2a
   - enabled: 1
+    path: Assets/Scenes/Boss/REALSCENE.unity
+    guid: 7576ae7a9ae7eee45843502535bec33c
+  - enabled: 1
     path: Assets/Scenes/Animations/AFTER BOSS LEVEL.unity
     guid: 64c1fa2a414058e4ab8cbd1b691e9d20
   - enabled: 1
-    path: Assets/DOS/REALDOS.unity
-    guid: 04e29e3827ceb2a4d9cbbd5f54af2409
+    path: Assets/Scenes/Quiz/final_quiz.unity
+    guid: 2e784b09de05145489cfda716a3a2cd1
   - enabled: 1
     path: Assets/Scenes/Animations/THE END.unity
     guid: 78089d8ece3d34a43989bc95fac6f31e
+  - enabled: 1
+    path: Assets/Scenes/Chat_Bot/Chat_Bot.unity
+    guid: 9ba880ec69107b64c995465cdd6a1b94
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

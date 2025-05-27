@@ -7,7 +7,7 @@ namespace DOS
 {
     public class BossHealthDOS : MonoBehaviour
     {
-        public int health = 150;
+        public int health = 80;
         public GameObject deathEffect;
         public bool isInvulnerable = false;
 
