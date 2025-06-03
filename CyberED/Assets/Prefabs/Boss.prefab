@@ -395,7 +395,6 @@ GameObject:
   - component: {fileID: 2477317677388287888}
   - component: {fileID: 4710426091233885121}
   - component: {fileID: 2299805867647613922}
-  - component: {fileID: 5065401708424377151}
   - component: {fileID: 7530505230793096642}
   m_Layer: 10
   m_Name: Boss
@@ -531,22 +530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3685399719102653692, guid: eb737c54a6af4e2438a90f61e4a7f39b, type: 3}
   isFlipped: 0
---- !u!114 &5065401708424377151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4644640107155251729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae776ef7fb190534dbfbb90484a1a9db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 150
-  deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
-    type: 3}
-  isInvulnerable: 0
 --- !u!114 &7530505230793096642
 MonoBehaviour:
   m_ObjectHideFlags: 0
