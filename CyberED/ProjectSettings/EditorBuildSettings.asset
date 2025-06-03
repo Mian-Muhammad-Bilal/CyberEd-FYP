@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu/Pause_menu.unity
+    guid: 8cfd0ed1f47166343948547d3c31e5a6
+  - enabled: 1
     path: Assets/Scenes/FirebaseAuth.unity
     guid: 7ded8dedcbb84e449a9d801299ffadb9
   - enabled: 1
-    path: Assets/Scenes/Platformer/1MainMenu.unity
+    path: Assets/Scenes/Menu/MainMenu.unity
     guid: 102338e01914ee340a35ef48be457d72
   - enabled: 1
     path: Assets/Scenes/Animations/backstory.unity
