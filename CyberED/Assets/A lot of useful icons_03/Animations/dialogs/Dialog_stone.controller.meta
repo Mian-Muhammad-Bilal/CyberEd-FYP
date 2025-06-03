@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: aad459d4cc6cce144bf39bd4b1f41d24
+timeCreated: 1523371305
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127001
+  packageName: A lot of useful icons_03
+  packageVersion: 1.0
+  assetPath: Assets/A lot of useful icons_03/Animations/dialogs/Dialog_stone.controller
+  uploadId: 263349

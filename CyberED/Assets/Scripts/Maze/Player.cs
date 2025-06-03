@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public GameObject door;
     public Text keyAmount;
     public Text youwin;
+    public GameObject Panel; // 👈 Add this for the panel you want to close
+
 
     private Vector2 moveDirection = Vector2.zero;
 
@@ -67,5 +69,16 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+    }
+    public void ClosePanel()
+    {
+        Panel.SetActive(false);
+        Time.timeScale = 1f; // Resume the game when panel is closed
+
+    }
+    void Start()
+    {
+        Panel.transform.SetAsLastSibling();
+        Time.timeScale = 0f; // Pause the game at the start
     }
 }

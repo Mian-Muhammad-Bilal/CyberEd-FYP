@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 88813d1e035cf454a93025440287bbea
+timeCreated: 1534908661
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127001
+  packageName: A lot of useful icons_03
+  packageVersion: 1.0
+  assetPath: Assets/A lot of useful icons_03/Scripts/dialogs/DialogCall.cs
+  uploadId: 263349

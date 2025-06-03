@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eb5aaab57b76b9b419fd9dc81e31b52f
+timeCreated: 1534908423
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127001
+  packageName: A lot of useful icons_03
+  packageVersion: 1.0
+  assetPath: Assets/A lot of useful icons_03/Animations/Button.controller
+  uploadId: 263349

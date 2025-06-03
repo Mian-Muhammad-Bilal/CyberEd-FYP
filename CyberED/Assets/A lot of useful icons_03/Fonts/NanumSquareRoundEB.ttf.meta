@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: d0e22d52676f7f0479df7274dcecd37e
+timeCreated: 1527524814
+licenseType: Store
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: NanumSquareRound
+  fontNames:
+  - NanumSquareRound
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127001
+  packageName: A lot of useful icons_03
+  packageVersion: 1.0
+  assetPath: Assets/A lot of useful icons_03/Fonts/NanumSquareRoundEB.ttf
+  uploadId: 263349
