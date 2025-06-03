@@ -28,18 +28,26 @@ public class BossHealth : MonoBehaviour
 		if (health <= 0)
 		{
 			Die();
-			StartCoroutine(LoadNextSceneAfterDelay(3f)); // Wait 3 seconds and load the next scene
+			// StartCoroutine(LoadNextSceneAfterDelay(3f)); // Wait 3 seconds and load the next scene
 		}
 	}
 
 	void Die()
-	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		// Destroy(gameObject);
-	}
- 	private IEnumerator LoadNextSceneAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+		{
+			Instantiate(deathEffect, transform.position, Quaternion.identity);
+			gameObject.SetActive(false);
+			// Destroy(gameObject); // Destroy boss immediately
+
+			Invoke("LoadNextScene", 3f); // Call after 3 seconds
+		}
+
+		void LoadNextScene()
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
+
+
+ 	// private IEnumerator LoadNextSceneAfterDelay(float delay)
+    // {
+    // }
 }
