@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfaef0b998662b48a7b64f04cd04b5c, type: 3}
+  m_Name: Cyber Basics final
+  m_EditorClassIdentifier: 
+  category: Cyber Basics
+  questions:
+  - questionText: Should you accept friend requests from strangers online?
+    replies:
+    - Yes
+    - 'No '
+    - Maybe
+    - Only if they look nice
+    correctReplyIndex: 1
+    questionImage: {fileID: -855298285791758126, guid: b01e948e1a629e341942a178821352d1, type: 3}
+  - questionText: Which password is the strongest?
+    replies:
+    - password123
+    - 123456
+    - 'MyDog$2024 '
+    - abcdef
+    correctReplyIndex: 2
+    questionImage: {fileID: 6937817954938267909, guid: 81830468c8311c24791e9b53330ef7b3, type: 3}
+  - questionText: What should you do before clicking a link?
+    replies:
+    - Just click it
+    - Share with friends
+    - 'Verify the website '
+    - Screenshot it
+    correctReplyIndex: 2
+    questionImage: {fileID: -6470460504253458178, guid: e34c7255714521a4e87c3314f737075c, type: 3}
+  - questionText: An email says "Click here to unlock your account!" What should
+      you do?
+    replies:
+    - Click quickly
+    - 'Ignore and verify with the official site '
+    - Reply to the email
+    - Forward to a friend
+    correctReplyIndex: 1
+    questionImage: {fileID: -4178046375966092550, guid: 4d2825e342e77724abf9f8720968347d, type: 3}
+  - questionText: Is it safe to do banking on public Wi-Fi without a VPN?
+    replies:
+    - Yes
+    - 'No '
+    - Only at home
+    - Only in cafes
+    correctReplyIndex: 1
+    questionImage: {fileID: 3465286685962602723, guid: 892e3b9be9e79654193b173bb574b174, type: 3}
+  - questionText: How can you protect your phone from strangers?
+    replies:
+    - Keep it off
+    - "Don\u2019t use it"
+    - 'Set a password or fingerprint lock '
+    - Hide it under your pillow
+    correctReplyIndex: 2
+    questionImage: {fileID: 3465286685962602723, guid: 3aaa9883fb786b54aad045fa76c8d376, type: 3}
+  - questionText: What should a secure website have for payments?
+    replies:
+    - http
+    - http only
+    - 'https '
+    - www
+    correctReplyIndex: 2
+    questionImage: {fileID: 3465286685962602723, guid: 3aaa9883fb786b54aad045fa76c8d376, type: 3}
+  - questionText: An app asks for microphone access for no reason. What should you
+      do?
+    replies:
+    - Allow it
+    - Ignore it
+    - 'Delete the app '
+    - Share the app
+    correctReplyIndex: 2
+    questionImage: {fileID: 3465286685962602723, guid: 3aaa9883fb786b54aad045fa76c8d376, type: 3}
+  - questionText: Why should you update your software regularly?
+    replies:
+    - For new emojis
+    - To play games
+    - 'To fix bugs and security issues '
+    - To make it slower
+    correctReplyIndex: 2
+    questionImage: {fileID: 3465286685962602723, guid: 3aaa9883fb786b54aad045fa76c8d376, type: 3}
+  - questionText: What can help recover lost files after a crash?
+    replies:
+    - Restarting
+    - Praying
+    - 'Regular backups '
+    - Charging your device
+    correctReplyIndex: 2
+    questionImage: {fileID: 3465286685962602723, guid: 3aaa9883fb786b54aad045fa76c8d376, type: 3}
