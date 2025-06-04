@@ -3889,6 +3889,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Text
+      value: "\U0001F393 <b>The Matric results are out!</b>  \r\nThousands of students
+        and parents are visiting the site at the same time.  \r\nThe server is under
+        heavy pressure and might crash due to too many requests.\r\n\r\nYou must
+        act fast \u2014 regulate the traffic and ensure everyone gets their results
+        safely.\r\n\r\n<b>Enemies:</b> Students (as avatars), each saying \u201C<i>Checking
+        Result</i>\u201D\r\n\r\n<b>Server Object:</b> \U0001F5A5\uFE0F A Result Portal
+        glowing in the center\r\n\r\n<b>You:</b> A traffic handler with abilities
+        like  \r\n\u2022 <i>Queue Creation</i>  \r\n\u2022 <i>Result Delay Buffer</i>\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
