@@ -11,10 +11,10 @@ public class MainMenu1: MonoBehaviour
         //  SceneManager.LoadScene("Quiz");
     }
     
-    public void ResetQuiz()
-    { 
-        PlayerPrefs.DeleteAll(); 
-    }
+    //public void ResetQuiz()
+    //{ 
+   //     PlayerPrefs.DeleteAll(); 
+    //}
     public void Exit()
     {
         Application.Quit();
