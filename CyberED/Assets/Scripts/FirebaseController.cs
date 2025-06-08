@@ -86,6 +86,7 @@ public class FirebaseController: MonoBehaviour
         }
         // Do Login
         SignInUser(loginEmail.text,loginPassword.text);
+        
     }
 
     public void SignUpUser()
@@ -129,7 +130,7 @@ public class FirebaseController: MonoBehaviour
         auth.SignOut();
         profileUserEmail_Text.text = " ";
         profileUserName_Text.text = " ";
-        OpenLoginPanel();
+        //OpenLoginPanel();
 
     }
 
@@ -163,6 +164,7 @@ public class FirebaseController: MonoBehaviour
                 result.User.DisplayName, result.User.UserId);
             
             UpdateUserProfile(Username);
+            OpenLoginPanel();
         });
     }
 
@@ -197,8 +199,14 @@ public class FirebaseController: MonoBehaviour
             profileUserName_Text.text = " " + result.User.DisplayName;
             profileUserEmail_Text.text = " " + result.User.Email;
 
-            OpenProfilePanel();
+            StartCoroutine(LoadNextSceneAfterDelay(2f));
         });
+    }
+
+    private IEnumerator LoadNextSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void InitializeFirebase() 
@@ -274,7 +282,7 @@ public class FirebaseController: MonoBehaviour
                 profileUserName_Text.text = " " + user.DisplayName;
                 profileUserEmail_Text.text = " " + user.Email;
 
-                OpenProfilePanel();
+                //OpenProfilePanel();
             }
         }
     }
@@ -333,6 +341,7 @@ public class FirebaseController: MonoBehaviour
             }}
             
             showNotificationMessage("Alert","Successfully Send Email For Reset Password");
+            OpenLoginPanel();
         });
     }
 
