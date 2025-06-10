@@ -2023,17 +2023,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 895824927074931904, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 539401916}
-    - target: {fileID: 895824927074931904, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+    - target: {fileID: 426156236220211139, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688921000669155518, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
       propertyPath: m_Name
       value: Pause_menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688921000669155518, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7436293356309136343, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
       propertyPath: m_Pivot.x
@@ -2120,11 +2120,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
---- !u!1 &539401916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1874484759014085812, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
-  m_PrefabInstance: {fileID: 539401915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &604206580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,6 +4627,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1192600667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192600669}
+  - component: {fileID: 1192600668}
+  m_Layer: 0
+  m_Name: Penal_Canvas_manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1192600668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192600667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0904d92a55bd56d4aaf2fc7855c57180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 0
+  speed: 5
+  door: {fileID: 0}
+  keyAmount: {fileID: 0}
+  youwin: {fileID: 0}
+  Panel: {fileID: 1851398477}
+--- !u!4 &1192600669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192600667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7828366, y: -2.727109, z: -0.00753363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284935534
 GameObject:
   m_ObjectHideFlags: 0
@@ -6918,6 +6963,137 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1851398476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Text
+      value: "Welcome to the <b>Digital Realm</b>...\n\nYou are a Seeker \u2014 chosen
+        to navigate the platformer.\n\nAhead lies <b><color=#005E77>Genesis</color></b>,
+        an advance AI who holds the first key to understanding <b>Cyber Security</b>.\n\nBut
+        the path won\u2019t be easy\u2026\n\nThis is your training ground.\n\n<b>Learn
+        to move. Learn to survive.</b>\nReach <b>Genesis</b> and unlock the knowledge
+        you need.\n\n\U0001F3AE <b>Welcome to Level 1.</b>\nYour journey starts now."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594596535770717569, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Text
+      value: Platformer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607153422779480245, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501887479697335748, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832558516303559566, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Name
+      value: Penal_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832558516303559566, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719834888448467877, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1192600668}
+    - target: {fileID: 8719834888448467877, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+--- !u!1 &1851398477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6832558516303559566, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+  m_PrefabInstance: {fileID: 1851398476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1890003202
 GameObject:
   m_ObjectHideFlags: 0
@@ -7506,3 +7682,5 @@ SceneRoots:
   - {fileID: 534893941}
   - {fileID: 877032905}
   - {fileID: 539401915}
+  - {fileID: 1851398476}
+  - {fileID: 1192600669}
