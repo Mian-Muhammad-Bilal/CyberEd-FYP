@@ -6766,7 +6766,7 @@ GameObject:
   - component: {fileID: 624565511}
   - component: {fileID: 624565513}
   - component: {fileID: 624565512}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8190,7 +8190,7 @@ GameObject:
   - component: {fileID: 747897652}
   - component: {fileID: 747897654}
   - component: {fileID: 747897653}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9444,7 +9444,7 @@ GameObject:
   - component: {fileID: 915908328}
   - component: {fileID: 915908327}
   - component: {fileID: 915908326}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9600,7 +9600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1003, y: 407}
+  m_AnchoredPosition: {x: 1003, y: 126}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &942232329
@@ -10787,7 +10787,7 @@ GameObject:
   - component: {fileID: 1021581348}
   - component: {fileID: 1021581350}
   - component: {fileID: 1021581349}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11122,7 +11122,7 @@ GameObject:
   - component: {fileID: 1060176254}
   - component: {fileID: 1060176256}
   - component: {fileID: 1060176255}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Secnario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12589,7 +12589,7 @@ GameObject:
   - component: {fileID: 1194652940}
   - component: {fileID: 1194652939}
   - component: {fileID: 1194652938}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Penal_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14814,7 +14814,7 @@ GameObject:
   - component: {fileID: 1430467499}
   - component: {fileID: 1430467501}
   - component: {fileID: 1430467500}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25242,8 +25242,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 1650962764}
   - {fileID: 1194652941}
+  - {fileID: 1650962764}
   - {fileID: 1485523713}
   - {fileID: 2012867016}
   - {fileID: 1589537040}

@@ -25,6 +25,6 @@ public class VideoEndHandler : MonoBehaviour
     }
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0); // Load the next scene
+        SceneManager.LoadScene("MainMenu"); // Load the next scene
     }
 }
