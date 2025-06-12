@@ -18,9 +18,13 @@ public class Playermovement : MonoBehaviour
     public float climbSpeed = 2.5f;
     public float moveDirection = 0f;
     private bool grounded;
+    private SpriteRenderer spriteRenderer;
+
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -59,17 +63,20 @@ public class Playermovement : MonoBehaviour
     body.linearVelocity = new Vector2(moveDirection * speed, body.linearVelocity.y);
     anim.SetBool("run", moveDirection != 0f);
 
-    // Player flipping
-    if (moveDirection > +0.01f)
-    {
-        // Face right
-        transform.localScale = new Vector2(+0.18f, 0.18f);
+        // Player flipping
+        if (moveDirection > 0f)
+        {
+            // Face right
+            // transform.localScale = new Vector2(+0.18f, 0.18f);
+            spriteRenderer.flipX = true;
+
     }
-    else if (moveDirection < -0.01f)
-    {
-        // Face left
-        transform.localScale = new Vector2(-0.18f, 0.18f);
-    }
+        else if (moveDirection < 0f)
+        {
+            // Face left
+            // transform.localScale = new Vector2(-0.18f, 0.18f);
+            spriteRenderer.flipX = false;
+        }
 
     // Climbing logic
     if (isLadder && Mathf.Abs(vertical) > 0f)
