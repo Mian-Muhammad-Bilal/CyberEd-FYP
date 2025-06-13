@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public int score; // Variable to store the player's current score
     public TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component for displaying the score
     
-    public const string ScoreKey = "Score";
+    public static string ScoreKey = "PlayerScore";
 
     // Ensure only one instance exists
     private void Awake()

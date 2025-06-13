@@ -39,14 +39,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameFinished.SetActive(false);
+        score.ResetScore(); // ✅ Reset the score before restarting
     //     if (nextButton != null)
-    // {
-    //     nextButton.gameObject.SetActive(false); // Hide the Next button at the start
-    // }
-    // else
-    // {
-    //     Debug.LogError("⚠️ Next button is not assigned in the Inspector!");
-    // }
+        // {
+        //     nextButton.gameObject.SetActive(false); // Hide the Next button at the start
+        // }
+        // else
+        // {
+        //     Debug.LogError("⚠️ Next button is not assigned in the Inspector!");
+        // }
 
         if (categories == null || categories.Length == 0)
         {
@@ -233,25 +234,27 @@ public class GameManager : MonoBehaviour
 
         if (ScoreManager.instance != null) // Ensure ScoreManager exists
         {
-            int finalScore = ScoreManager.instance.score; // Get the actual score
-            finalScoreText.text = finalScore.ToString(); // Display only the score
-            Debug.Log($"🎯 Game Over! Final Score: {finalScore}");
-
-            ScoreManager.instance.ResetScore(); // Reset the score properly
+            int finalScore = ScoreManager.instance.score;
+            PlayerPrefs.SetInt(ScoreManager.ScoreKey, finalScore); // 👈 Save score
+            PlayerPrefs.Save(); // 👈 Don't forget this
+            finalScoreText.text = finalScore.ToString();
+            Debug.Log($"🎯 Score saved to PlayerPrefs: {finalScore}");
         }
         else
         {
             Debug.LogError("❌ ScoreManager instance is null! Make sure it is in the scene.");
             finalScoreText.text = "0"; // Display 0 if ScoreManager is missing
         }
-        StartCoroutine(LoadNextSceneAfterDelay(2f)); // Wait 3 seconds and load the next scene
-        // Invoke("LoadNextScene", 3f); // Wait 3 seconds, then load next scene
-        // nextButton.gameObject.SetActive(true); // Show the next button
+
+        StartCoroutine(LoadNextSceneAfterDelay(2f)); // Wait 2 seconds and load the next scene
     }
+
 
      private IEnumerator LoadNextSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        PlayerPrefs.SetInt("PlayerScore", ScoreManager.instance.score); 
+        PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     // public void LoadNextScene()
@@ -279,7 +282,7 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         currentQuestionIndex = 0; // Reset question index
-        score.ResetScore(); // ✅ Reset the score before restarting
+        
         PlayerPrefs.DeleteKey("LastQuestionIndex_" + selectedCategory.name); // Reset quiz progress
         GameFinished.SetActive(false); // Hide the game finished panel
         DisplayQuestion(); // Start the quiz from the beginning

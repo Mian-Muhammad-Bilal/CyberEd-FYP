@@ -8,6 +8,8 @@ using System;
 using System.Threading.Tasks;
 using Firebase.Extensions;
 using UnityEngine.SceneManagement;
+using TMPro; // Required for TextMeshPro
+
 
 
 public class FirebaseController: MonoBehaviour
@@ -15,6 +17,9 @@ public class FirebaseController: MonoBehaviour
     public GameObject loginPanel, signupPanel, profilePanel, forgetPasswordPanel, notificationPanel;
     public InputField loginEmail, loginPassword, signupEmail, signupPassword, signupCPassword, signupUserName, forgetPassEmail;
     public Text notif_Title_Text, notif_Message_Text, profileUserName_Text, profileUserEmail_Text;
+    public Text profileScore_Text; // 🟢 Assign this in the Inspector (Text under Score in profile panel)
+
+
 
     public Toggle rememberMe;
 
@@ -66,6 +71,18 @@ public class FirebaseController: MonoBehaviour
         signupPanel.SetActive(false);
         profilePanel.SetActive(true);
         forgetPasswordPanel.SetActive(false);
+
+        // Update user details
+        if (user != null)
+        {
+            profileUserName_Text.text = " " + user.DisplayName;
+            profileUserEmail_Text.text = " " + user.Email;
+        }
+
+        // 🔥 Fetch the score from PlayerPrefs (persistent storage)
+        int savedScore = PlayerPrefs.GetInt(ScoreManager.ScoreKey, 0);
+        profileScore_Text.text = " Score: " + savedScore.ToString();
+        Debug.Log("✅ Score loaded from PlayerPrefs: " + savedScore);
     }
 
     public void OpenForgetPassPanel()
@@ -130,6 +147,7 @@ public class FirebaseController: MonoBehaviour
         auth.SignOut();
         profileUserEmail_Text.text = " ";
         profileUserName_Text.text = " ";
+        SceneManager.LoadScene(1);
         //OpenLoginPanel();
 
     }

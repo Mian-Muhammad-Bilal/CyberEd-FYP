@@ -12,12 +12,16 @@ public class MainMenu1 : MonoBehaviour
     public GameObject howToPlayPanel;    // Drag HowToPlayPanel here
     public GameObject settingsPanel;     // Drag SettingsPanel here
     public GameObject profilePanel;      // Drag FirebaseAuth ProfilePanel here
+    public GameObject warningPopup;      // Assign this in Inspector (a panel or TMP_Text that shows a warning)
 
     [Header("Settings UI Elements (assign for SettingsPanel)")]
     public Slider musicSlider;           // Drag the Music slider here
     public TMP_Dropdown graphicsDropdown;// Drag the Graphics dropdown here
     public Slider brightnessSlider;      // Drag the Brightness slider here
     public Image brightnessOverlay;      // Drag the Brightness overlay here
+
+    [Header("Settings Save Control")]
+    private bool isSettingsChanged = false;
 
     // Optional: If you want the brightness slider to affect the whole Canvas,
     // add a CanvasGroup on your Canvas and assign it below:
@@ -30,8 +34,8 @@ public class MainMenu1 : MonoBehaviour
     {
         if (musicSlider != null && graphicsDropdown != null && brightnessSlider != null && brightnessOverlay != null)
         {
-            musicSlider.value      = PlayerPrefs.GetFloat("MusicVolume",   1f);
-            brightnessSlider.value = PlayerPrefs.GetFloat("Brightness",    1f);
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+            brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 1f);
 
             // Dynamically fill graphics dropdown with available quality levels
             graphicsDropdown.ClearOptions();
@@ -151,10 +155,19 @@ public class MainMenu1 : MonoBehaviour
     {
         if (settingsPanel != null)
         {
-            settingsPanel.SetActive(false);
-            Time.timeScale = 1f;
+            if (isSettingsChanged)
+            {
+                if (warningPopup != null)
+                    warningPopup.SetActive(true); // Show the warning panel or text
+            }
+            else
+            {
+                settingsPanel.SetActive(false);
+                Time.timeScale = 1f;
+            }
         }
     }
+
 
     /// <summary>
     /// Closes the Profile panel.
@@ -178,15 +191,19 @@ public class MainMenu1 : MonoBehaviour
     public void OnMusicSliderChanged(float value)
     {
         AudioListener.volume = value;
+        isSettingsChanged = true;
+
     }
 
     /// <summary>
     /// Call this on Graphics dropdown’s OnValueChanged(int).
     /// </summary>
-   public void OnGraphicsDropdownChanged(int index)
+    public void OnGraphicsDropdownChanged(int index)
     {
         QualitySettings.SetQualityLevel(index, true);
         Debug.Log("Graphics quality set to: " + QualitySettings.names[index] + " (Level " + index + ")");
+        isSettingsChanged = true;
+
     }
 
     /// <summary>
@@ -204,6 +221,8 @@ public class MainMenu1 : MonoBehaviour
         color.a = Mathf.Lerp(0f, 0.5f, 1f - value);
 
         brightnessOverlay.color = color;
+        isSettingsChanged = true;
+
     }
 
 
@@ -227,13 +246,14 @@ public class MainMenu1 : MonoBehaviour
 
         if (graphicsDropdown != null)
             PlayerPrefs.SetInt("GraphicsQuality", graphicsDropdown.value);
-            graphicsDropdown.RefreshShownValue();
+        graphicsDropdown.RefreshShownValue();
 
         if (brightnessSlider != null)
             PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
 
         PlayerPrefs.Save();
         ApplySettings();
+        isSettingsChanged = false; // Reset the flag after saving
     }
 
     /// <summary>
@@ -254,4 +274,11 @@ public class MainMenu1 : MonoBehaviour
             brightnessOverlay.color = new Color(0, 0, 0, invertedBrightness);
         }
     }
+    
+    public void CancelCloseAttempt()
+    {
+        if (warningPopup != null)
+            warningPopup.SetActive(false);
+    }
+
 }
