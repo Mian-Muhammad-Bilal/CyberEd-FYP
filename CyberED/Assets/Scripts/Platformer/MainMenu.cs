@@ -163,7 +163,7 @@ public class MainMenu1 : MonoBehaviour
             else
             {
                 settingsPanel.SetActive(false);
-                Time.timeScale = 1f;
+                // Time.timeScale = 1f;
             }
         }
     }
