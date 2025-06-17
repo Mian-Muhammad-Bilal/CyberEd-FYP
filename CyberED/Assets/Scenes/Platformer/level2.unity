@@ -703,6 +703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5748472641731265023, guid: 2e0d618e01d79294688c143b1add60c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4724,7 +4728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5253358113654888320, guid: 35ef7f82a204a8f47b8a9f0e75e2ca42, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5483468554571732058, guid: 35ef7f82a204a8f47b8a9f0e75e2ca42, type: 3}
       propertyPath: m_AnchorMax.x
