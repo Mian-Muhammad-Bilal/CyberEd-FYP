@@ -4216,6 +4216,18 @@ PrefabInstance:
         like  \r\n\u2022 <i>Queue Creation</i>  \r\n\u2022 <i>Result Delay Buffer</i>\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 0
       objectReference: {fileID: 0}
@@ -4309,7 +4321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6832558516303559566, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7768723621861851030, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_Type

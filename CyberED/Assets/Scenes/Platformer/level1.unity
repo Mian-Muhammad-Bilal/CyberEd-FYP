@@ -3496,17 +3496,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e0d618e01d79294688c143b1add60c4, type: 3}
---- !u!114 &868846478 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2775981223758485345, guid: 2e0d618e01d79294688c143b1add60c4, type: 3}
-  m_PrefabInstance: {fileID: 868846477}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83725796d92f8d94294929181f75f827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &877032903
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,7 +6561,7 @@ MonoBehaviour:
   nameText: {fileID: 1364317579}
   dialogueText: {fileID: 918545287}
   animator: {fileID: 430191976}
-  levelLoader: {fileID: 868846478}
+  levelLoader: {fileID: 0}
 --- !u!1 &1720047362
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,11 +7274,23 @@ PrefabInstance:
     - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_Text
       value: "Welcome to the <b>Digital Realm</b>...\n\nYou are a Seeker \u2014 chosen
-        to navigate the platformer.\n\nAhead lies <b><color=#005E77>Genesis</color></b>,
+        to navigate the platformer.\n\nAhead lies <b><color=#fff>Genesis</color></b>,
         an advance AI who holds the first key to understanding <b>Cyber Security</b>.\n\nBut
         the path won\u2019t be easy\u2026\n\nThis is your training ground.\n\n<b>Learn
         to move. Learn to survive.</b>\nReach <b>Genesis</b> and unlock the knowledge
         you need.\n\n\U0001F3AE <b>Welcome to Level 1.</b>\nYour journey starts now."
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355287784122174025, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3594596535770717569, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_Text
@@ -7385,7 +7386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6832558516303559566, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7768723621861851030, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_Type
