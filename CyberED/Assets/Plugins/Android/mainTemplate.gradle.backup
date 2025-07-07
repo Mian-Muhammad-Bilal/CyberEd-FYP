@@ -7,7 +7,9 @@ dependencies {
     // Android Resolver Dependencies Start
     implementation 'com.google.android.gms:play-services-base:18.6.0'
     implementation 'com.google.firebase:firebase-analytics:22.4.0'
+    implementation 'com.google.firebase:firebase-app-unity:12.8.0'
     implementation 'com.google.firebase:firebase-auth:23.2.0'
+    implementation 'com.google.firebase:firebase-auth-unity:12.8.0'
     implementation 'com.google.firebase:firebase-common:21.0.0'
     // Android Resolver Dependencies End
 }
@@ -31,7 +33,7 @@ android {
     ndkVersion ""
 
     compileSdk 33
-    // buildToolsVersion = "33.0.0"
+    buildToolsVersion = "33.0.0"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -39,21 +41,15 @@ android {
     }
 
     defaultConfig {
-        // Needed for GameActivity and Framepacing support
+        minSdk 23
+        targetSdk 33
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a"
             debugSymbolLevel "FULL"
         }
-
-        minSdk 23
-        targetSdk 33
-
         versionCode 1
         versionName '1.0'
         consumerProguardFiles 'proguard-unity.txt'
-
-        // Required line for Unity templating to work correctly
-        **DEFAULT_CONFIG_SETUP**
     }
 
     lint {
