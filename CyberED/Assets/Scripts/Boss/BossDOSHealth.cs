@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class BossHealth : MonoBehaviour
+public class BossHealth2 : MonoBehaviour
 {
 
-	public int health = 500;
+	public int health = 100;
 
 	public GameObject deathEffect;
 
@@ -20,7 +20,7 @@ public class BossHealth : MonoBehaviour
 
 		health -= damage;
 
-		if (health <= 200)
+		if (health <= 50)
 		{
 			GetComponent<Animator>().SetBool("IsEnraged", true);
 		}
@@ -38,7 +38,7 @@ public class BossHealth : MonoBehaviour
 			gameObject.SetActive(false);
 			// Destroy(gameObject); // Destroy boss immediately
 
-			Invoke("LoadNextScene", 3f); // Call after 3 seconds
+			Invoke("LoadNextScene", 30f); // Call after 3 seconds
 		}
 
 		void LoadNextScene()
