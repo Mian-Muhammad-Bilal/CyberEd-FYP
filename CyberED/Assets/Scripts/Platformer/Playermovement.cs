@@ -20,6 +20,13 @@ public class Playermovement : MonoBehaviour
     private bool grounded;
     private SpriteRenderer spriteRenderer;
 
+    // Toggle for input method
+    public static bool useKeyboardControls = false;
+
+    // Call this from the settings toggle
+    public static void SetControlMode(bool useKeyboard) {
+        useKeyboardControls = useKeyboard;
+    }
 
     private void Awake()
     {
@@ -56,6 +63,15 @@ public class Playermovement : MonoBehaviour
    private void Update()
 {
     if (body == null || anim == null) return; // Skip if not on the Player
+
+    // Keyboard input always available
+    float input = Input.GetAxisRaw("Horizontal"); // Arrow keys or A/D
+    moveDirection = input; // Always set, so player stops when no key is pressed
+
+    if (Input.GetKeyDown(KeyCode.Space)) {
+        Jump();
+    }
+    // On-screen button logic (handled by UI buttons calling MoveLeft/MoveRight)
 
     // grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 

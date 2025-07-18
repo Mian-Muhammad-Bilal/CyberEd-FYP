@@ -3355,6 +3355,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2396482526465005764, guid: 35ef7f82a204a8f47b8a9f0e75e2ca42, type: 3}
+      propertyPath: onScreenControls
+      value: 
+      objectReference: {fileID: 1245455885}
     - target: {fileID: 2564113438858994673, guid: 35ef7f82a204a8f47b8a9f0e75e2ca42, type: 3}
       propertyPath: m_SizeDelta.x
       value: 134.2903
@@ -3630,7 +3634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3688921000669155518, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5024031916222336263, guid: 261a5ec8bd3d8014787d61722ca89bf8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11752,7 +11756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6832558516303559566, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7768723621861851030, guid: ff5daaf79add29647a26a24878c776a0, type: 3}
       propertyPath: m_Type

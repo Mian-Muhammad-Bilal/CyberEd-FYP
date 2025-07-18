@@ -1816,6 +1816,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2396482526465005764, guid: 35ef7f82a204a8f47b8a9f0e75e2ca42, type: 3}
+      propertyPath: onScreenControls
+      value: 
+      objectReference: {fileID: 1245455885}
     - target: {fileID: 2564113438858994673, guid: 35ef7f82a204a8f47b8a9f0e75e2ca42, type: 3}
       propertyPath: m_SizeDelta.x
       value: 134.2903
@@ -2523,6 +2527,8 @@ MonoBehaviour:
   hasJumped: 0
   climbSpeed: 2.5
   moveDirection: 0
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
 --- !u!1 &1087307318
 GameObject:
   m_ObjectHideFlags: 0

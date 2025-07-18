@@ -18,6 +18,10 @@ public class Playermovement_Boss : MonoBehaviour
     public float climbSpeed = 2.5f;
     public float moveDirection = 0f;
     private bool grounded;
+    private bool isButtonPressed = false; // Tracks if on-screen button is pressed
+
+    public GameObject bulletPrefab; // Assign in Inspector
+    public Transform firePoint;    // Assign in Inspector (where the bullet spawns)
 
     private void Awake()
     {
@@ -27,33 +31,58 @@ public class Playermovement_Boss : MonoBehaviour
 
     // Methods to be called on button press/release
     public void MoveLeft(bool isPressed)
-{
-    if (isPressed)
     {
-        moveDirection = -1f;
+        if (isPressed)
+        {
+            moveDirection = -1f;
+            isButtonPressed = true;
+        }
+        else
+        {
+            moveDirection = 0f;
+            isButtonPressed = false;
+        }
     }
-    else
-    {
-        moveDirection = 0f;
-    }
-}
 
     public void MoveRight(bool isPressed)
     {
-     if (isPressed)
-    {
-        moveDirection = 1f;
+        if (isPressed)
+        {
+            moveDirection = 1f;
+            isButtonPressed = true;
+        }
+        else
+        {
+            moveDirection = 0f;
+            isButtonPressed = false;
+        }
     }
-    else
-    {
-        moveDirection = 0f;
-    }   
-}
    private void Update()
 {
-    // if (body == null || anim == null) return; // Skip if not on the Player
+    // Keyboard input always available
+    float input = 0f;
+    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) input -= 1f;
+    if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) input += 1f;
 
-    // grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    bool keyboardActive = input != 0f;
+
+    // If keyboard is active, update moveDirection
+    if (keyboardActive) {
+        moveDirection = input;
+    }
+    // If neither keyboard nor on-screen button is active, stop
+    if (!keyboardActive && !isButtonPressed) {
+        moveDirection = 0f;
+    }
+
+    // Jump with spacebar
+    if (Input.GetKeyDown(KeyCode.Space)) {
+        Jump();
+    }
+    // Fire with Z
+    if (Input.GetKeyDown(KeyCode.Z)) {
+        Fire();
+    }
 
     // Apply horizontal movement
     body.linearVelocity = new Vector2(moveDirection * speed, body.linearVelocity.y);
@@ -120,7 +149,7 @@ public class Playermovement_Boss : MonoBehaviour
         else if (!hasJumped && grounded)
         {
             // Regular jump
-            body.linearVelocity = new Vector2(body.linearVelocity.x, 10f);
+            body.linearVelocity = new Vector2(body.linearVelocity.x, 6f); // Lowered jump force
             // anim.SetTrigger("jump");
             hasJumped = true;
             grounded = false;
@@ -156,6 +185,24 @@ public class Playermovement_Boss : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+        }
+    }
+
+    public void Fire()
+    {
+        Debug.Log("Fire() called");
+        // If a PrefabWeapon component is present, use it
+        var weapon = GetComponent<PrefabWeapon>();
+        if (weapon != null)
+        {
+            weapon.Shoot();
+            return;
+        }
+        // Otherwise, fallback to direct instantiation
+        if (bulletPrefab != null && firePoint != null)
+        {
+            // Make sure firePoint's right vector points in the direction you want the bullet to go
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
     }
 }

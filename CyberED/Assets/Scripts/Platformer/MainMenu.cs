@@ -14,14 +14,20 @@ public class MainMenu1 : MonoBehaviour
     public GameObject profilePanel;      // Drag FirebaseAuth ProfilePanel here
     public GameObject warningPopup;      // Assign this in Inspector (a panel or TMP_Text that shows a warning)
 
+    [Header("On-Screen Controls")]
+    public GameObject onScreenControls; // Assign Penal_Canvas or your on-screen controls parent here
+
     [Header("Settings UI Elements (assign for SettingsPanel)")]
     public Slider musicSlider;           // Drag the Music slider here
     public TMP_Dropdown graphicsDropdown;// Drag the Graphics dropdown here
     public Slider brightnessSlider;      // Drag the Brightness slider here
     public Image brightnessOverlay;      // Drag the Brightness overlay here
+    [Header("Control Mode Toggle")]
+    public Toggle controlModeToggle; // Assign in Inspector (true=Desktop, false=Mobile)
 
     [Header("Settings Save Control")]
     private bool isSettingsChanged = false;
+    private bool pendingControlMode; // Holds the value until Save is pressed
 
     // Optional: If you want the brightness slider to affect the whole Canvas,
     // add a CanvasGroup on your Canvas and assign it below:
@@ -50,6 +56,20 @@ public class MainMenu1 : MonoBehaviour
             brightnessOverlay.gameObject.SetActive(true);
             ApplyBrightness(brightnessSlider.value);
             ApplySettings();
+        }
+        // Load control mode preference
+        if (controlModeToggle != null)
+        {
+            bool isDesktop = PlayerPrefs.GetInt("ControlModeDesktop", 0) == 1;
+            pendingControlMode = isDesktop;
+            controlModeToggle.isOn = isDesktop;
+            Playermovement.SetControlMode(isDesktop);
+            controlModeToggle.onValueChanged.AddListener(OnControlModeToggleChanged);
+        }
+        // Set on-screen controls visibility at start
+        if (onScreenControls != null && controlModeToggle != null)
+        {
+            onScreenControls.SetActive(!controlModeToggle.isOn);
         }
     }
 
@@ -225,6 +245,16 @@ public class MainMenu1 : MonoBehaviour
 
     }
 
+    // Call this from the Toggle's OnValueChanged(bool) event
+    public void OnControlModeToggleChanged(bool isDesktop)
+    {
+        pendingControlMode = isDesktop;
+        isSettingsChanged = true;
+        if (onScreenControls != null)
+        {
+            onScreenControls.SetActive(!isDesktop);
+        }
+    }
 
     private void ApplyBrightness(float sliderValue)
     {
@@ -250,6 +280,14 @@ public class MainMenu1 : MonoBehaviour
 
         if (brightnessSlider != null)
             PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
+
+        // Save control mode
+        PlayerPrefs.SetInt("ControlModeDesktop", pendingControlMode ? 1 : 0);
+        Playermovement.SetControlMode(pendingControlMode);
+        if (onScreenControls != null)
+        {
+            onScreenControls.SetActive(!pendingControlMode);
+        }
 
         PlayerPrefs.Save();
         ApplySettings();
