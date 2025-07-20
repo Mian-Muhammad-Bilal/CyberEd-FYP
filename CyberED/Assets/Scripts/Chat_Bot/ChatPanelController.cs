@@ -7,11 +7,10 @@ public class ChatPanelController : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private Button triggerButton;
     [SerializeField] private RectTransform chatPanel;
-    [SerializeField] private RectTransform triggerButtonRect;
     
     [Header("Animation Settings")]
     [SerializeField] private float animationDuration = 0.5f;
-    [SerializeField] private float slideDistance = 800f;
+    [SerializeField] private float slideDistance = 8000f;
     [SerializeField] private AnimationCurve animationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     
     [Header("Panel States")]
@@ -19,15 +18,10 @@ public class ChatPanelController : MonoBehaviour
     
     private Vector2 panelHiddenPosition;
     private Vector2 panelVisiblePosition;
-    private Vector2 buttonHiddenPosition;
-    private Vector2 buttonVisiblePosition;
     
     private void Start()
     {
-        // Calculate positions
         SetupPositions();
-        
-        // Start with panel hidden
         SetPanelHidden();
     }
     
@@ -35,16 +29,11 @@ public class ChatPanelController : MonoBehaviour
     {
         if (chatPanel != null)
         {
-            // Panel slides from left to center
-            panelHiddenPosition = new Vector2(-slideDistance, chatPanel.anchoredPosition.y);
             panelVisiblePosition = chatPanel.anchoredPosition;
-        }
-        
-        if (triggerButtonRect != null)
-        {
-            // Button moves with the panel
-            buttonHiddenPosition = new Vector2(-slideDistance + 100f, triggerButtonRect.anchoredPosition.y);
-            buttonVisiblePosition = triggerButtonRect.anchoredPosition;
+            panelHiddenPosition = new Vector2(panelVisiblePosition.x - 850f, panelVisiblePosition.y);
+
+            Debug.Log($"Panel visible position: {panelVisiblePosition}");
+            Debug.Log($"Panel hidden position: {panelHiddenPosition}");
         }
     }
     
@@ -65,6 +54,10 @@ public class ChatPanelController : MonoBehaviour
         if (!isPanelVisible)
         {
             isPanelVisible = true;
+
+            // ⏸ Pause the game
+            Time.timeScale = 0f;
+
             StartCoroutine(AnimatePanel(true));
         }
     }
@@ -74,6 +67,10 @@ public class ChatPanelController : MonoBehaviour
         if (isPanelVisible)
         {
             isPanelVisible = false;
+
+            // ▶️ Resume the game
+            Time.timeScale = 1f;
+
             StartCoroutine(AnimatePanel(false));
         }
     }
@@ -83,39 +80,33 @@ public class ChatPanelController : MonoBehaviour
         float elapsedTime = 0f;
         Vector2 startPos = show ? panelHiddenPosition : panelVisiblePosition;
         Vector2 endPos = show ? panelVisiblePosition : panelHiddenPosition;
-        Vector2 buttonStartPos = show ? buttonHiddenPosition : buttonVisiblePosition;
-        Vector2 buttonEndPos = show ? buttonVisiblePosition : buttonHiddenPosition;
-        
+
+        Debug.Log($"Animation: show={show}, startPos={startPos}, endPos={endPos}");
+
         while (elapsedTime < animationDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime; // Use unscaled time to keep animating while paused
             float progress = elapsedTime / animationDuration;
             float curveValue = animationCurve.Evaluate(progress);
-            
-            // Animate panel
+
             if (chatPanel != null)
             {
-                chatPanel.anchoredPosition = Vector2.Lerp(startPos, endPos, curveValue);
+                Vector2 newPos = Vector2.Lerp(startPos, endPos, curveValue);
+                chatPanel.anchoredPosition = newPos;
+
+                if (elapsedTime % 0.1f < Time.unscaledDeltaTime)
+                {
+                    Debug.Log($"Current position: {chatPanel.anchoredPosition}");
+                }
             }
-            
-            // Animate button
-            if (triggerButtonRect != null)
-            {
-                triggerButtonRect.anchoredPosition = Vector2.Lerp(buttonStartPos, buttonEndPos, curveValue);
-            }
-            
+
             yield return null;
         }
-        
-        // Ensure final position is exact
+
         if (chatPanel != null)
         {
             chatPanel.anchoredPosition = endPos;
-        }
-        
-        if (triggerButtonRect != null)
-        {
-            triggerButtonRect.anchoredPosition = buttonEndPos;
+            Debug.Log($"Final position: {chatPanel.anchoredPosition}");
         }
     }
     
@@ -125,18 +116,13 @@ public class ChatPanelController : MonoBehaviour
         {
             chatPanel.anchoredPosition = panelHiddenPosition;
         }
-        
-        if (triggerButtonRect != null)
-        {
-            triggerButtonRect.anchoredPosition = buttonHiddenPosition;
-        }
-        
+
         isPanelVisible = false;
+        Time.timeScale = 1f; // Ensure game isn't paused on start
     }
-    
-    // Public method to check panel state
+
     public bool IsPanelVisible()
     {
         return isPanelVisible;
     }
-} 
+}
