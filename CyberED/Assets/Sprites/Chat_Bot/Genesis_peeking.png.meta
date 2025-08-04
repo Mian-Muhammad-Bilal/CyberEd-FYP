@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Genesis_peeking_0: -2959644688109974764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
